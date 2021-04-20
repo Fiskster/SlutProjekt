@@ -9,6 +9,11 @@ namespace slutProjekt
         public KeyboardKey forwardKey;
         public KeyboardKey backKey;
 
+        public KeyboardKey jumpKey;
+
+        public  float playerSpeed;
+        float DT = Raylib.GetFrameTime();
+
         public Player()
         {
             x = 2f;
@@ -25,6 +30,10 @@ namespace slutProjekt
              if (Raylib.IsKeyDown(backKey))
             {
                 x -= 3f;
+            }
+            if (Raylib.IsKeyPressed(jumpKey))
+            {
+                x = x + playerSpeed * DT;
             }
         }
 
