@@ -8,13 +8,14 @@ namespace slutProjekt
         {
             Raylib.InitWindow(800, 600, "Testing");
 
-           
+                 Player newPlayer = new Player(10, 300, KeyboardKey.KEY_A, KeyboardKey.KEY_D, KeyboardKey.KEY_SPACE);
+
 
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.WHITE);
-                Raylib.DrawRectangle(0,500,800,200, Color.BLUE);
+                  GameObject.DrawAll();
                 Raylib.EndDrawing();
 
 

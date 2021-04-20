@@ -12,14 +12,13 @@ namespace slutProjekt
         public KeyboardKey jumpKey;
 
         public  float playerSpeed;
-        float DT = Raylib.GetFrameTime();
 
-        public Player()
+        public Player(float x, float y, KeyboardKey forwardKey, KeyboardKey backKey , KeyboardKey jumpKey)
         {
             x = 2f;
             y = 2f;
             gameObjects.Add(this);
-
+            playerSpeed = 5f; 
         }
         public void Update()
         {
@@ -33,7 +32,7 @@ namespace slutProjekt
             }
             if (Raylib.IsKeyPressed(jumpKey))
             {
-                x = x + playerSpeed * DT;
+                x = x + playerSpeed * Raylib.GetFrameTime();
             }
         }
 
