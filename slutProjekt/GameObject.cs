@@ -4,7 +4,7 @@ using Raylib_cs;
 
 namespace slutProjekt
 {
-    public class GameObject
+    public abstract class GameObject
     {
         Texture2D texture;
 
@@ -20,9 +20,11 @@ namespace slutProjekt
             texture = Raylib.LoadTextureFromImage(bruh);
         }
 
+        public abstract void Update();
+
         public void Draw()
         {
-            Raylib.DrawTexture(texture, 5, 185, Color.YELLOW);
+            Raylib.DrawTexture(texture, (int) x, (int) y, Color.YELLOW);
 
         }
 
@@ -34,6 +36,13 @@ namespace slutProjekt
             foreach (GameObject p in gameObjects)
             {
                 p.Draw();
+            }
+        }
+          public static void UpdateAll()
+        {
+            foreach (GameObject p in gameObjects)
+            {
+                p.Update();
             }
         }
     }
