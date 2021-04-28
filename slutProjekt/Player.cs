@@ -17,6 +17,7 @@ namespace slutProjekt
         public float gravity = 1;
         public Player(float x, float y, KeyboardKey forwardKey, KeyboardKey backKey , KeyboardKey jumpKey)
         {
+            LoadTexture(@"whip.png");
            
             x = 2f;
             y = 2f;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace slutProjekt
 {
-    public class Level
+    public class Level : GameObject
     {
         static Queue<GameObject> tileQueue = new Queue<GameObject>();
 
@@ -12,7 +12,7 @@ namespace slutProjekt
 
         static public float tileY = 5f;
 
-        public Rectangle rect = new Rectangle();
+       public Rectangle rect = new Rectangle();
 
         public Level()
         {
@@ -20,11 +20,20 @@ namespace slutProjekt
             this.rect.width = 100;
             this.rect.x = tileX;
             this.rect.y = tileY;
-            
+            // tileQueue.Enqueue(RectToGameObject(rect));
 
         }
 
-        public static void Update()
+        // private GameObject RectToGameObject(Rectangle rect)
+        // {
+        //     GameObject gmeObj = new GameObject();
+        //     gmeObj.x = rect.x;
+        //     gmeObj.y = rect.y;
+
+        //     return gmeObj;
+        // }
+
+        public override void Update()
         {
             if (tileQueue.Count <= 3)
             {
@@ -36,7 +45,7 @@ namespace slutProjekt
         {
             foreach(GameObject tile in tileQueue)
             {
-
+                tile.Draw();
             }
         }
 

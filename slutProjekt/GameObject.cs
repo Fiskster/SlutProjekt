@@ -12,12 +12,22 @@ namespace slutProjekt
 
         public float x;
 
+        public Rectangle rect = new Rectangle();
+
         public float y;
 
         public GameObject()
         {
-            var bruh = Raylib.LoadImage(@"C:\Users\axel.lilja2\Documents\PROG02\SlutProjekt\slutProjekt\bin\Debug\netcoreapp3.1\whip.png");
-            texture = Raylib.LoadTextureFromImage(bruh);
+          x = rect.x;  
+          y = rect.y;
+        }
+
+        public void LoadTexture(string txtFile)
+        {
+
+            texture = Raylib.LoadTexture(txtFile);
+            rect.width = texture.width;
+            rect.height = texture.height;
         }
 
         public abstract void Update();

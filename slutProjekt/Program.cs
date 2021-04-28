@@ -10,14 +10,15 @@ namespace slutProjekt
 
              Player newPlayer = new Player(10, 300, KeyboardKey.KEY_A, KeyboardKey.KEY_D, KeyboardKey.KEY_SPACE);
              Raylib.SetTargetFPS(60);
-             Level level = new Level();
+            //  Level level = new Level();
 
             while (!Raylib.WindowShouldClose())
             {
-                  GameObject.UpdateAll();
-                Level.Update();
-                level.Draw();
                 Raylib.BeginDrawing();
+                  GameObject.UpdateAll();
+                // Level.Update();
+                // level.Draw();
+                
                 Raylib.ClearBackground(Color.WHITE);
                   GameObject.DrawAll();
                 Raylib.EndDrawing();
