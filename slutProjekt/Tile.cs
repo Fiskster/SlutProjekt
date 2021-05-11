@@ -7,40 +7,43 @@ namespace slutProjekt
     public class Tile : GameObject
     {
 
-        static List<GameObject> tileList = new List<GameObject>();
+        static List<Rectangle> tileList = new List<Rectangle>();
 
-
+        Rectangle r2 = new Rectangle();
         public Tile()
         {
             this.rect.height = 50;
-            this.rect.width = 500;
-            this.rect.x = 500;
+            this.rect.width = 800;
+            this.rect.x = 100;
             this.rect.y = 420;
-            gameObjects.Add(this);
-                 tileList.Add(this);
 
+                gameObjects.Add(this);
+
+            tileList.Add(rect);
+            tileList.Add(r2);
         }
 
         public void spawn()
         {
-             tileList.Clear();
-            gameObjects.Add(this);
 
-              tileList.Add(this);
+            tileList.Add(rect);
         }
 
         public override void Update()
         {
-            foreach (Tile tile in tileList)
+            foreach (Rectangle tile in tileList)
             {
              Raylib.DrawRectangleRec(rect,Color.BLUE);
 
             }
             rect.x -= 2f;
-            if(rect.x  <= 0 - 500)
+            if(rect.x  == 0 - 500)
             {
-                Console.WriteLine("ÅHHHHHHHHHHHHHH");
+                
+                     Console.WriteLine("ÅHHHHHHHHHHHHHH");
                 spawn();
+                
+               
              
             }            
 

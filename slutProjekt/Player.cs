@@ -5,7 +5,7 @@ namespace slutProjekt
 {
     public class Player : GameObject
     {
-
+        
         public KeyboardKey forwardKey;
         public KeyboardKey backKey;
 
@@ -16,7 +16,7 @@ namespace slutProjekt
 
         public  float playerVelocity;
 
-        public float gravity = 1;
+        private float gravity = 1;
         public Player(float x, float y, KeyboardKey forwardKey, KeyboardKey backKey , KeyboardKey jumpKey)
         {
             LoadTexture(@"whip.png");
@@ -32,6 +32,10 @@ namespace slutProjekt
             this.jumpKey = jumpKey;
 
 
+        }
+        public float getGravity()
+        {
+            return gravity; 
         }
         public sealed override void Update()
         {
