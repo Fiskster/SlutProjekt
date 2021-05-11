@@ -9,6 +9,8 @@ namespace slutProjekt
         public KeyboardKey forwardKey;
         public KeyboardKey backKey;
 
+           Sound jump = Raylib.LoadSound(@"boink.mp3");
+           
 
         public KeyboardKey jumpKey;
 
@@ -18,7 +20,7 @@ namespace slutProjekt
         public Player(float x, float y, KeyboardKey forwardKey, KeyboardKey backKey , KeyboardKey jumpKey)
         {
             LoadTexture(@"whip.png");
-           
+            Raylib.SetSoundVolume(jump, 0.5f);
             x = 2f;
             y = 2f;
             gameObjects.Add(this);
@@ -31,9 +33,8 @@ namespace slutProjekt
 
 
         }
-        public override void Update()
+        public sealed override void Update()
         {
-           
            playerVelocity += gravity;
            
             if (Raylib.IsKeyDown(forwardKey))
@@ -51,6 +52,7 @@ namespace slutProjekt
             if (Raylib.IsKeyPressed(jumpKey) && y >= 100)
             {
                  playerVelocity = - 15; 
+                 Raylib.PlaySound(jump);
             }
            y += playerVelocity;
         }

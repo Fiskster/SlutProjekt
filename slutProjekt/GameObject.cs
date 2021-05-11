@@ -20,6 +20,7 @@ namespace slutProjekt
         {
           x = rect.x;  
           y = rect.y;
+
         }
 
         public void LoadTexture(string txtFile)
@@ -53,6 +54,8 @@ namespace slutProjekt
             foreach (GameObject p in gameObjects)
             {
                 p.Update();
+                
+
             }
         }
     }
