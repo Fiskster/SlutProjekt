@@ -44,20 +44,32 @@ namespace slutProjekt
 
         public static void DrawAll()
         {
-            foreach (GameObject p in gameObjects)
+            //locking gameobjects list to a single thread to make it work but it odes not. 
+           lock (gameObjects)
+           {
+                 foreach (GameObject p in gameObjects)
             {
                 p.Draw();
             }
+           }
+          
         }
         //drawAll and UpdateAll methods to reduce code in Main. 
           public static void UpdateAll()
         {
-            foreach (GameObject p in gameObjects)
+            lock (gameObjects)
             {
-                p.Update();
+                foreach (GameObject p in gameObjects)
+                {
+                    p.Update();
+                }
+            }
+                
                 
 
-            }
+            
+            
+            
         }
     }
 }
