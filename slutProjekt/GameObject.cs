@@ -32,7 +32,7 @@ namespace slutProjekt
         }
 
         public abstract void Update();
-
+        //abstract method to be overwritten
         public void Draw()
         {
             Raylib.DrawTexture(texture, (int) x, (int) y, Color.YELLOW);
@@ -49,6 +49,7 @@ namespace slutProjekt
                 p.Draw();
             }
         }
+        //drawAll and UpdateAll methods to reduce code in Main. 
           public static void UpdateAll()
         {
             foreach (GameObject p in gameObjects)

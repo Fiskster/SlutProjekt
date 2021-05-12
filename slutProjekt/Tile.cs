@@ -8,8 +8,9 @@ namespace slutProjekt
     {
 
         static List<Rectangle> tileList = new List<Rectangle>();
-
-        Rectangle r2 = new Rectangle();
+        //list for all tiles.
+        // Rectangle r2 = new Rectangle();
+        //test
         public Tile()
         {
             this.rect.height = 50;
@@ -20,7 +21,8 @@ namespace slutProjekt
                 gameObjects.Add(this);
 
             tileList.Add(rect);
-            tileList.Add(r2);
+           // tileList.Add(r2);
+            //test 
         }
 
         public void spawn()
@@ -28,7 +30,7 @@ namespace slutProjekt
 
             tileList.Add(rect);
         }
-
+        //tile update method to override abstract method
         public override void Update()
         {
             foreach (Rectangle tile in tileList)
@@ -43,7 +45,7 @@ namespace slutProjekt
                      Console.WriteLine("ÅHHHHHHHHHHHHHH");
                 spawn();
                 
-               
+               //when tile reach destination, spawn new tile.
              
             }            
 

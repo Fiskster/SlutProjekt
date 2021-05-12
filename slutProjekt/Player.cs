@@ -17,6 +17,7 @@ namespace slutProjekt
         public  float playerVelocity;
 
         private float gravity = 1;
+        //give player input keys and values.
         public Player(float x, float y, KeyboardKey forwardKey, KeyboardKey backKey , KeyboardKey jumpKey)
         {
             LoadTexture(@"whip.png");
@@ -33,10 +34,12 @@ namespace slutProjekt
 
 
         }
+        //Using get gravity so it is constant and not able to be changed.
         public float getGravity()
         {
             return gravity; 
         }
+        //using sealed method here so Tile.update Appends to this method. Seems to be working ¯\_(ツ)_/¯
         public sealed override void Update()
         {
            playerVelocity += gravity;
@@ -53,7 +56,7 @@ namespace slutProjekt
             {
                 playerVelocity = 0; 
             }
-            if (Raylib.IsKeyPressed(jumpKey) && y >= 100)
+            if (Raylib.IsKeyPressed(jumpKey) && y >= 100) //jump method and groundcheck 
             {
                  playerVelocity = - 15; 
                  Raylib.PlaySound(jump);
