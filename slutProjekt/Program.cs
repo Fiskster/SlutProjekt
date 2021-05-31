@@ -8,7 +8,7 @@ namespace slutProjekt
         {
             Raylib.InitWindow(800, 600, "Testing");
             Raylib.InitAudioDevice();
-
+              //New instances of player and tile
              Player newPlayer = new Player(10, 300, KeyboardKey.KEY_A, KeyboardKey.KEY_D, KeyboardKey.KEY_SPACE);
              Tile tile = new Tile();
              Raylib.SetTargetFPS(60);
@@ -16,7 +16,7 @@ namespace slutProjekt
              
 
             //  Level level = new Level();
-
+            //main Loop
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();

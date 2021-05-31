@@ -8,6 +8,7 @@ namespace slutProjekt
     {
 
         static List<Rectangle> tileList = new List<Rectangle>();
+        //couldve used Queue here but it was not working as intended so had to switch to list. 
         //list for all tiles.
         // Rectangle r2 = new Rectangle();
         //test
@@ -27,7 +28,10 @@ namespace slutProjekt
 
         public void spawn()
         {
-
+            lock (this)
+            {
+               // gameObjects.Add(this);
+            }
             tileList.Add(rect);
         }
         //tile update method to override abstract method
